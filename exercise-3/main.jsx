@@ -53,6 +53,6 @@ var EmployeeTable = React.createClass({
 });
 
 // Render your component in the `main` section
-ReactDOM.render(
+ReactDOM.render(<EmployeeTable data={employData}/>,
     document.querySelector('main')
 );
