@@ -2,21 +2,31 @@
 
 // Data to pass to our List elements
 var InputComponent = React.createClass({
+
+    //set initial state
     getInitialState:function() {
         return {text:''};
     },
+
+    // Update function
     update:function(event) {
         var value = event.target.value;
         this.setState({text:value});
     },
-    render:function() {
+ 
+
+    // Render function
+    render:function(){
         return (
+
             <div>
                 <input onChange={this.update} />
                 <br/>
-                <text>The user has typed: {this.state.text}</text>
+                <p>The user has typed: </p>
+                <text>{this.state.text}</text>
             </div>
         );
+
     }
 })
 
@@ -24,3 +34,5 @@ var InputComponent = React.createClass({
 ReactDOM.render(<InputComponent/>,
     document.querySelector('main')
 );
+
+
