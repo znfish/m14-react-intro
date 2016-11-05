@@ -47,18 +47,18 @@ var EmployeeTable = React.createClass({
 
 // EmployeeSearch
 var EmployeeSearch = React.createClass({
-      getInitialState:function() {
-        return({searchString:''});
-    },
-    filter:function(e) {
-        console.log(e.target.value);
-        this.setState({searchString:e.target.value})
+    getInitialState:function() {
+        return {searchString:''};
     },
     // Add a filter funciton
+    filter function(event) {
+        var value = event.target.value;
+        this.setState({searchString:value}); 
+    },
 
     render:function() {
         var employees = this.props.data;
-
+        var searchString = this.state.searchString.trim().toLowerCase();
         // Use this.state.searchString to filter down the `employees` array
 
         return(

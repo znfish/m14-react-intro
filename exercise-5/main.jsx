@@ -57,7 +57,7 @@ var MovieItem = React.createClass({
 var MovieApp = React.createClass({
     // Set initlal state: empty array for movies, order:'popularity'
     getInitialState:function() {
-        return null;
+        return {movies:[], order:'popularity'};
     },
 
     // Function to get movies from the API
@@ -71,19 +71,20 @@ var MovieApp = React.createClass({
     },
 
     // Function to sort an array by an object key
-    sortMovies:function(movies, order) {
-        return movies.sort(function(a,b){
+    sortMovie:function(movie, order) {
+        return movie.sort(function(a, b){
             return a[order] - b[order]
         })
     },
-
     // Function to set the "order" of state
     setOrder:function(element) {
+        this.setState({order:element.target.id});
 
     },
 
     // When the component mounts, get the movies from the API
     componentDidMount:function() {
+        this.getMovies();
 
     },
 
